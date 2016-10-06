@@ -21,11 +21,17 @@ This sample app shows you how to add Orchextra capabilities to your app using th
 
 # Screenshots
 
-### Contact Picker
+### Demo screens
 
 Android | iOS
 --- | ---
 ![](https://raw.githubusercontent.com/Telerik-Verified-Plugins/Orchextra-DemoApp/master/screenshots/android/Android%20screenshot%201.png) | ![](https://raw.githubusercontent.com/Telerik-Verified-Plugins/Orchextra-DemoApp/master/screenshots/ios/iOS%20screenshot%201.PNG)
+
+### Camera feature
+
+Android | iOS
+--- | ---
+![](https://raw.githubusercontent.com/Telerik-Verified-Plugins/Orchextra-DemoApp/master/screenshots/android/Android%20screenshot%202.png) | ![](https://raw.githubusercontent.com/Telerik-Verified-Plugins/Orchextra-DemoApp/master/screenshots/ios/iOS%20screenshot%202.PNG)
 
 [Back to Top](#top)
 
