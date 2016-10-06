@@ -1,0 +1,44 @@
+{
+  "ProjectName": "Orchextra",
+  "ProjectGuid": "d49353d9-b13c-4338-96ba-25299fedaa82",
+  "projectVersion": 1,
+  "AppIdentifier": "com.telerik.plugindemo.orchextra",
+  "DisplayName": "Orchextra",
+  "Author": "Telerik",
+  "Description": "Orchextra demo app",
+  "BundleVersion": "1.0.0",
+  "AndroidVersionCode": "1",
+  "iOSDeviceFamily": [
+    "1",
+    "2"
+  ],
+  "iOSBackgroundMode": [],
+  "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
+  "FrameworkVersion": "4.0.0",
+  "AndroidPermissions": [
+    "android.permission.INTERNET"
+  ],
+  "DeviceOrientations": [
+    "Portrait",
+    "Landscape"
+  ],
+  "AndroidHardwareAcceleration": "True",
+  "iOSStatusBarStyle": "Default",
+  "Framework": "Cordova",
+  "CorePlugins": [
+    "cordova-plugin-console",
+    "cordova-plugin-device",
+    "cordova-plugin-dialogs",
+    "cordova-plugin-orchextra@0.0.1",
+    "cordova-plugin-splashscreen",
+    "cordova-plugin-statusbar",
+    "cordova-plugin-whitelist"
+  ],
+  "WP8WindowsPublisherName": "CN=Telerik",
+  "WP8PackageIdentityName": "1234Telerik.com.telerik.plugindemo.orchextra",
+  "WP8PublisherID": "{0676dd8c-9f39-419f-b4dd-ac8d63b1c0e1}",
+  "WP8ProductID": "{d5438857-c709-4b1d-bebc-b6040126f930}",
+  "iOSDeploymentTarget": "7.0",
+  "CordovaPluginVariables": {
+  }
+}
