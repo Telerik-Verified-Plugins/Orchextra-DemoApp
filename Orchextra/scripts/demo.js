@@ -1,112 +1,85 @@
 (function (global) {
   var DemoViewModel,
       geoTransitionListener = null,
-      app = global.app = global.app || {};
+      app = global.app = global.app || {},
+      ORCHEXTRA_API_KEY = "41e8e773422bf0d4f8bd534344501214e9f312c3", // TODO change
+      ORCHEXTRA_API_SECRET = "fcea9f4064d59b81eccbb05d50a63b0470017c5c",
+      ORCHEXTRA_LOG_LEVEL = "all";
   
   DemoViewModel = kendo.data.ObservableObject.extend({
     
-    sendInvitations: function () {
+    initSDK: function () {
       if (!this.checkSimulator()) {
-        FirebaseInvites.sendInvitation(
+        OrchextraPlugin.init(
           {
-              title: "The title",
-              message: "The message",
-              deepLink: "myapp://deeplink",
-              callToActionText: "Install please!",
-              description: "My description",
-              customImage: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
-              //emailSubject: "My Email subject",
-              //emailHtmlContent: "Some <strong>HTML</strong> content",
-              androidClientID: "123abc",
-              // You can find your iOS app's client ID in the GoogleService-Info.plist file you downloaded from the Firebase console
-              iosClientID: "abc123"
+              apiKey: ORCHEXTRA_API_KEY,
+              apiSecret: ORCHEXTRA_API_SECRET,
+              logLevel: ORCHEXTRA_LOG_LEVEL // optional, debug | error | warning | all
           },
           function (msg) {
+            // may be called with a Custom URL Scheme like "myApp://news/international"
             alert(JSON.stringify(msg));
           },
-          function (msg) {
-            alert(JSON.stringify(msg));
+          function (error) {
+            alert("Error: " + error);
           }
         );
       }
     },
 
-    getInvitation: function () {
+    startListening: function () {
       if (!this.checkSimulator()) {
-        FirebaseInvites.getInvitation(
-          function (msg) {
-            alert(JSON.stringify(msg));
+        OrchextraPlugin.start(
+          function () {
+            alert("Success!");
           },
-          function (msg) {
-            alert(JSON.stringify(msg));
+          function (error) {
+            alert("Error: " + error);
           }
         );
       }
     },
 
-    login: function () {
+    stopListening: function () {
       if (!this.checkSimulator()) {
-        var feedback = document.querySelector("#feedback");
-        window.plugins.googleplus.login(
-          {},
-          function (obj) {
-            feedback.innerHTML = "Hi, " + obj.displayName + ", " + obj.email;
-
-            var image = document.querySelector("#image");
-            image.src = obj.imageUrl;
-            image.style.visibility = 'visible';
+        OrchextraPlugin.stop(
+          function () {
+            alert("Success!");
           },
-          function (msg) {
-            feedback.innerHTML = "error: " + msg;
+          function (error) {
+            alert("Error: " + error);
           }
         );
       }
     },
 
-    trySilentLogin: function () {
+    openScanner: function () {
       if (!this.checkSimulator()) {
-        var feedback = document.querySelector("#feedback");
-        window.plugins.googleplus.trySilentLogin(
-          {},
-          function (obj) {
-            feedback.innerHTML = "(Silent) Hi, " + obj.displayName + ", " + obj.email;
-
-            var image = document.querySelector("#image");
-            image.src = obj.imageUrl;
-            image.style.visibility = 'visible';
+        OrchextraPlugin.openScanner(
+          function () {
+            console.log("Success opening scanner!");
           },
-          function (msg) {
-            feedback.innerHTML = "error: " + msg;
-          }
-        );
-      }
-    },
-    
-    logout: function () {
-      if (!this.checkSimulator()) {
-        var feedback = document.querySelector("#feedback");
-        window.plugins.googleplus.logout(
-          function (msg) {
-            feedback.innerHTML = msg;
-            document.querySelector("#image").style.visibility = 'hidden';
-          },
-          function (msg) {
-            feedback.innerHTML = "error: " + msg;
+          function (error) {
+            alert("Error: " + error);
           }
         );
       }
     },
 
-    disconnect: function () {
+    binduser: function () {
       if (!this.checkSimulator()) {
-        var feedback = document.querySelector("#feedback");
-        window.plugins.googleplus.disconnect(
-          function (msg) {
-            feedback.innerHTML = msg;
-            document.querySelector("#image").style.visibility = 'hidden';
+        OrchextraPlugin.bindUser(
+          {
+            crmId: 'eddy123',
+            birthday: '1985/04/22',
+            gender : 'M',
+            tags : ['Visa', 'Master Card']
           },
-          function (msg) {
-            feedback.innerHTML = "error: " + msg;
+          function () {
+            alert("Success!");
+          },
+          function (error) {
+            alert("Error: " + error);
           }
         );
       }
@@ -116,7 +89,7 @@
       if (window.navigator.simulator === true) {
         alert('This plugin is not available in the simulator.');
         return true;
-      } else if (window.FirebaseInvites === undefined) {
+      } else if (window.OrchextraPlugin === undefined) {
         alert('Plugin not found. Maybe you are running in AppBuilder Companion app which currently does not support this plugin.');
         return true;
       } else {
