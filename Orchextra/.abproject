@@ -29,7 +29,6 @@
     "cordova-plugin-console",
     "cordova-plugin-device",
     "cordova-plugin-dialogs",
-    "cordova-plugin-orchextra@0.0.1",
     "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
     "cordova-plugin-whitelist"
