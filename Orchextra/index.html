@@ -30,8 +30,11 @@
         </div>
         <h3>Orchextra Plugin Demo</h3>
         <p>
-          The Orchextra plugin allows ..
+          The Orchextra plugin allows your hybrid app to interact with the Orchextra Platform.
       	</p>
+        <p>
+          Don't forget to change ORCHEXTRA_API_KEY and ORCHEXTRA_API_SECRET in scripts/demo.js
+        </p>
         <p>
             Custom plugins don't work in the simulator and the AppBuilder companion app,
             so inside Telerik AppBuilder choose Run - Build - iOS/Android - App package.
@@ -45,20 +48,16 @@
         data-model="app.demoService.viewModel">
 
         <div class="demo">
-            <h3>Firebase Invite functions</h3>
-          	<button data-role="button" class="button" data-bind="click: sendInvitations">Send invites</button>
-          	<button data-role="button" class="button" data-bind="click: getInvitation">Get launch invite</button>
+            <h3>Initialization, do this first</h3>
+          	<button data-role="button" class="button" data-bind="click: initSDK">init</button>
 
-            <h3 class="hassubtitle">Google Sign-In functions</h3>
-            <p class="subtitle">Users need to be signed in with their Google account in order to use Firebase Invites. On Android that's not an issue, but on iOS you'll need to use this.</p> 
-          	<button data-role="button" class="button" data-bind="click: login">Login</button>
-          	<button data-role="button" class="button" data-bind="click: trySilentLogin">Try silent login (works until you call logout)</button>
-	          <button data-role="button" class="button" data-bind="click: logout">Logout</button>
-	          <button data-role="button" class="button" data-bind="click: disconnect">Disconnect</button>
-            <p id="feedback">not logged in</p>
-	          <p>
-              <img id="image" src="" />
-          </p>
+            <h3>Listening to events</h3>
+          	<button data-role="button" class="button" data-bind="click: startListening">Start</button>
+          	<button data-role="button" class="button" data-bind="click: stopListening">Stop</button>
+
+            <h3>Other features</h3>
+          	<button data-role="button" class="button" data-bind="click: openScanner">Open scanner</button>
+          	<button data-role="button" class="button" data-bind="click: bindUser">Bind user</button>
 			</div>
     </div>
 

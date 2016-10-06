@@ -14,7 +14,7 @@
   ],
   "iOSBackgroundMode": [],
   "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
-  "FrameworkVersion": "4.0.0",
+  "FrameworkVersion": "5.0.0",
   "AndroidPermissions": [
     "android.permission.INTERNET"
   ],
@@ -22,14 +22,13 @@
     "Portrait",
     "Landscape"
   ],
-  "AndroidHardwareAcceleration": "True",
+  "AndroidHardwareAcceleration": "true",
   "iOSStatusBarStyle": "Default",
   "Framework": "Cordova",
   "CorePlugins": [
     "cordova-plugin-console",
     "cordova-plugin-device",
     "cordova-plugin-dialogs",
-    "cordova-plugin-orchextra@0.0.1",
     "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
     "cordova-plugin-whitelist"
@@ -39,6 +38,5 @@
   "WP8PublisherID": "{0676dd8c-9f39-419f-b4dd-ac8d63b1c0e1}",
   "WP8ProductID": "{d5438857-c709-4b1d-bebc-b6040126f930}",
   "iOSDeploymentTarget": "7.0",
-  "CordovaPluginVariables": {
-  }
+  "CordovaPluginVariables": {}
 }
